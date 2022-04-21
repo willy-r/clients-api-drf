@@ -6,8 +6,8 @@ class Client(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=30, blank=False)
     cpf = models.CharField(max_length=11, unique=True)
-    rg = models.CharField(max_length=9)
-    cellphone = models.CharField(max_length=14)
+    rg = models.CharField(max_length=9, unique=True)
+    cellphone = models.CharField(max_length=14, unique=True)
     is_active = models.BooleanField()
 
     def __str__(self) -> str:
