@@ -24,6 +24,6 @@ class ClientSerializer(serializers.ModelSerializer):
         
         if not validators.validate_cellphone(data['cellphone']):
             raise serializers.ValidationError(
-                {'cellphone': 'O celular deve ter no mínimo 11 dígitos.'})
+                {'cellphone': 'O celular deve estar no seguinte formato: 11 91111-1111'})
         
         return data
