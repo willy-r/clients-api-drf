@@ -4,7 +4,7 @@ from django.db import models
 class Client(models.Model):
     """Represents a Client."""
     name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=30, blank=False)
+    email = models.EmailField(max_length=30, blank=False, unique=True)
     cpf = models.CharField(max_length=11, unique=True)
     rg = models.CharField(max_length=9, unique=True)
     cellphone = models.CharField(max_length=14, unique=True)

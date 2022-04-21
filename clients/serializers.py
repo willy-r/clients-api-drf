@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from clients.models import Client
+from clients import validators
 
 
 class ClientSerializer(serializers.ModelSerializer):
@@ -7,31 +8,22 @@ class ClientSerializer(serializers.ModelSerializer):
         model = Client
         fields = '__all__'
 
-    
-    def validate_name(self, name: str) -> str:
-        """Validates the name field."""
-        if not name.isalpha():
-            raise serializers.ValidationError('Nome só pode conter caracteres alfabéticos.')
+    def validate(self, data):
+        """Validates data."""
+        if not validators.validate_name(data['name']):
+            raise serializers.ValidationError(
+                {'name': 'Nome só pode conter caracteres alfabéticos.'})
         
-        return name
-    
-    def validate_cpf(self, cpf: str) -> str:
-        """Validates the cpf field."""
-        if len(cpf) != 11:
-            raise serializers.ValidationError('O CPF deve ter exatos 11 dígitos.')
-        
-        return cpf
-    
-    def validate_rg(self, rg: str) -> str:
-        """Validates the rg field."""
-        if len(rg) != 9:
-            raise serializers.ValidationError('O RG deve conter exatos 9 dígitos.')
-        
-        return rg
+        if not validators.validate_cpf(data['cpf']):
+            raise serializers.ValidationError(
+                {'cpf': 'O CPF deve ter exatos 11 dígitos.'})
 
-    def validate_cellphone(self, cellphone: str) -> str:
-        """Validates the cellphone field."""
-        if len(cellphone) < 11:
-            raise serializers.ValidationError('O celular deve ter no mínimo 11 dígitos.')
+        if not validators.validate_rg(data['rg']):
+            raise serializers.ValidationError(
+                {'rg': 'O RG deve conter exatos 9 dígitos.'})
         
-        return cellphone
+        if not validators.validate_cellphone(data['cellphone']):
+            raise serializers.ValidationError(
+                {'cellphone': 'O celular deve ter no mínimo 11 dígitos.'})
+        
+        return data
