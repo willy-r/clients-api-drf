@@ -16,7 +16,7 @@ class ClientSerializer(serializers.ModelSerializer):
         
         if not validators.validate_cpf(data['cpf']):
             raise serializers.ValidationError(
-                {'cpf': 'O CPF deve ter exatos 11 dígitos.'})
+                {'cpf': 'O CPF digitado é inválido.'})
 
         if not validators.validate_rg(data['rg']):
             raise serializers.ValidationError(

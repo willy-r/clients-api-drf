@@ -1,14 +1,20 @@
 import re
 
+from validate_docbr import CPF
+
 
 def validate_name(name: str) -> str:
     """Validates the name field."""
     return name.isalpha()
 
 
-def validate_cpf(cpf: str) -> str:
-    """Validates the cpf field."""
-    return len(cpf) == 11
+def validate_cpf(cpf_user: str) -> str:
+    """Validates the cpf field.
+    
+    Example: 01234567890
+    """
+    cpf = CPF()
+    return cpf.validate(cpf_user)
 
 
 def validate_rg(rg: str) -> str:
