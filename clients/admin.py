@@ -9,6 +9,6 @@ class ClientAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_filter = ('is_active',)
     list_editable = ('is_active',)
-    list_per_page = 25
+    list_per_page = 10
 
 admin.site.register(Client, ClientAdmin)
