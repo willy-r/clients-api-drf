@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from clients.models import Client
 
+
 class ClientAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'email','cpf', 'rg', 'cellphone', 'is_active')
     list_display_links = ('id', 'name')

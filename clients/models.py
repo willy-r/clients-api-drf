@@ -1,7 +1,8 @@
 from django.db import models
 
+
 class Client(models.Model):
-    """Represents a client."""
+    """Represents a Client."""
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=30, blank=False)
     cpf = models.CharField(max_length=11, unique=True)
