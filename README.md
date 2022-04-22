@@ -21,8 +21,8 @@ Define the following envs:
 Clone this repo and go to project root directory:
 
 ```bash
-$ git clone https://github.com/willy-r/school-api-drf.git
-$ cd school-api-drf
+$ git clone https://github.com/willy-r/clients-api-drf.git
+$ cd clients-api-drf
 ```
 
 Create virtual enviroment and activate it:
