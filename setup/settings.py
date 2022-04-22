@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     
     # Thirty party apps.
     'rest_framework',
+    'django_filters',
 
     # My apps.
     'clients',
@@ -133,5 +134,5 @@ STATIC_URL = '/static/'
 # Django Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 25
+    'PAGE_SIZE': 25,
 }
