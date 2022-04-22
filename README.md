@@ -7,7 +7,6 @@ Concepts applied her:
 - Validating
 - Filters
 - Searching
-- Deploy
 
 
 ## Running locally
@@ -51,7 +50,3 @@ Access API:
 
 [`http://localhost:8000`](http://localhost:8000)
 
-
-## Accessing on deploy
-
-- Soon...
