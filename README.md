@@ -9,6 +9,17 @@ Concepts applied her:
 - Searching
 
 
+## Endpoints
+
+| Method | Route | Description |
+| ------ | ----- | ----------- |
+| **GET** | `/clients` | Gets all clients |
+| **GET** | `/clients/{id}` | Gets the client by {id} |
+| **POST** | `/clients` | Creates a new client |
+| **PATCH/PUT** | `/clients/{id}` | Updates the client by {id} |
+| **DELETE** | `/clients/{id}` | Deletes the client by {id} |
+
+
 ## Running locally
 
 You need to have **Python 3.7.4+**
